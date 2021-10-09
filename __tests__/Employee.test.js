@@ -8,8 +8,16 @@ test('creates an employee Object', () => {
 })
 test('gets employee name', () => {
     const name = new Employee('Tyler');
-
-    expect(name.getName()).toBe('Tyler')
-
+    expect(name.getName()).toBe('Tyler');
     
+})
+test('gets employee id', () => {
+    const id = new Employee('Tyler', 7);
+
+    expect(id.getID()).toBe(7);
+})
+test('gets employee email', () =>{
+    const email = new Employee('Tyler', 7, 'tyleramair@gmail.com')
+
+    expect(email.getEmail()).toBe('tyleramair@gmail.com')
 })
