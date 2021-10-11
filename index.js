@@ -3,9 +3,9 @@ const fs = require('fs');
 
 
 //questions for each member
-const manager = () => [
+const managerInput = inquirer.prompt([
     {
-        name = 'managerName',
+        name = 'name',
         type = 'input',
         message = 'Welcome hotshot, please enter your name',
     },
@@ -24,9 +24,7 @@ const manager = () => [
         type = 'input',
         message = 'What is your Office Number',
     },
-   
-
-]
+])
 const intern = [
     {
         name = 'internName',
@@ -37,10 +35,21 @@ const intern = [
         name = 'internID',
         type = 'input',
         message = 'enter'
+    },
+    {
+        name = 'internEmail',
+        type = 'input',
+        message = 'please enter Intern email'
+    },
+    {
+        name = 'internSchool',
+        type = 'input',
+        message = 'please enter Intern school'
+
     }
 ]
 
-const addEmployee = () => [{
+const addEmployee = () => inquirer.prompt [{
     name = 'addEmployee',
     type = 'list',
     message = 'Would you like to add an employee',
@@ -49,5 +58,6 @@ const addEmployee = () => [{
 ]
 
 generateCards = () => {
-inquirer.prompt()
+addEmployee
 }
+generateCards();
