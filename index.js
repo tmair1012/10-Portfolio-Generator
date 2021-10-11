@@ -3,10 +3,11 @@ const fs = require('fs');
 
 
 //questions for each member
-const managerInput = inquirer.prompt([
+const manageQuestions = () => {
+    inquirer.prompt([
     {
-        name = 'name',
         type = 'input',
+        name = 'name',
         message = 'Welcome hotshot, please enter your name',
     },
     {
@@ -24,7 +25,34 @@ const managerInput = inquirer.prompt([
         type = 'input',
         message = 'What is your Office Number',
     },
+    {
+        name = 'addEmployee',
+        type = 'list',
+        message = 'which type of employee would you like to add',
+        choices = ['Engineer', 'Intern']
+    }
 ])
+.then(function(data){
+    switch(data){
+        case 'Engineer':
+            inquirer.prompt([{
+                name: 'github',
+                type: 'input',
+                message: 'Please enter Engineer github'
+            }
+            ])
+    }
+    switch(data){
+        case 'Intern':
+            inquirer.prompt([{
+                name: 'school',
+                type: 'input',
+                message: 'Please enter Intern school'
+
+            }])
+    }
+})
+}
 const intern = [
     {
         name = 'internName',
@@ -49,15 +77,20 @@ const intern = [
     }
 ]
 
-const addEmployee = () => inquirer.prompt [{
-    name = 'addEmployee',
-    type = 'list',
-    message = 'Would you like to add an employee',
-    choices = ['yes', 'no']
-}
-]
+/*const employ =
+inquirer.prompt()[{
+    name: 'addEmployee',
+    type: 'input',
+    message: 'Would you like to add an employee',
+}];
 
-generateCards = () => {
-addEmployee
+
+//generateCards = () => {
+
+function addEmployee(){
+    employ;
 }
-generateCards();
+addEmployee();
+//}
+//generateCards(); */
+manageQuestions();
