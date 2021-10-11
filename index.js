@@ -105,6 +105,64 @@ function addEngineer() {
     })
 }
 
+generateCards = () => {
+    let htmlGenerate = `<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <title>Portfolio Generator</title>
+    </head>
+    <body>
+        <header class = "bg-danger">
+            <h1>Team Portfolio Generator</h1>
+        </header>
+        <main>
+            <div class="container d-flex flex-wrap space-between">`
+    let managerHTML = `<div class="card" style="max-width: 18rem;">
+    <h3> ${theManager.name} <h3>
+    <div class="card-body">
+      <h5 class="card-title">Manager</h5>
+      <p class="card-text">Office Number: ${theManager.officeNumber}</p>
+      <p class="card-text"><small class="text-muted">Manager ID: ${theManager.id}</small></p>
+        <a href = "mailto:${theManager.email}">Send Email</a>
+      </div>`
+      let engineerHTMLCode = ""
+      for(let i=0;i<engineerArray.length;i++){
+          engineerHTMLCode +=`<div class="card" style="max-width: 18rem;">
+          <h3> ${engineerArray[i].name} <h3>
+          <div class="card-body">
+            <h5 class="card-title">Engineer</h5>
+            <p class="card-text">Github: ${engineerArray[i].github}</p>
+            <p class="card-text"><small class="text-muted">Engineer ID: ${engineerArray[i].id}</small></p>
+              <a href = "mailto:${engineerArray[i].email}">Send Email</a>
+            </div>`
+      }
+      let internHTMLCode =''
+      for(let i=0;i<internArray.length;i++){
+        internHTMLCode +=`<div class="card" style="max-width: 18rem;">
+        <h3> ${internArray[i].name} <h3>
+        <div class="card-body">
+          <h5 class="card-title">Intern</h5>
+          <p class="card-text">School: ${internArray[i].school}</p>
+          <p class="card-text"><small class="text-muted">Intern ID: ${internArray[i].id}</small></p>
+            <a href = "mailto:${internArray[i].email}">Send Email</a>
+          </div>`
+    }
+    let htmlGenerateEnd = `</div>
+    </main>>
+</body>
+</html>`
+
+let fileData = htmlGenerate + managerHTML + engineerHTMLCode + internHTMLCode + htmlGenerateEnd;
+fs.writeFileSync('./index.html', fileData, function(err,resp){
+    if (err) throw err;
+})
+console.log("File",fileData)
+}
 /*const employ =
 inquirer.prompt()[{
     name: 'addEmployee',
