@@ -18,9 +18,9 @@ N/A at this time
 ## Video Links:
 Watch in Order.
 Video 1:
-![Video](https://drive.google.com/file/d/1m1zLRuJaotA-aukYS4R0l27z95pWkKze/view)
+https://drive.google.com/file/d/1m1zLRuJaotA-aukYS4R0l27z95pWkKze/view
 Video 2:
-![Video](https://drive.google.com/file/d/1WcX1sXEiuaUmxvfmurY7l4FkWwfQw-1u/view)
+https://drive.google.com/file/d/1WcX1sXEiuaUmxvfmurY7l4FkWwfQw-1u/view
 Video 3:
-![Video](https://drive.google.com/file/d/12muJPAJw5UdM39MrHHFp_SQGVJaeKt56/view)
+https://drive.google.com/file/d/12muJPAJw5UdM39MrHHFp_SQGVJaeKt56/view)
 
