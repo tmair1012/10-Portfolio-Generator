@@ -1,12 +1,17 @@
+//Dependencies
 const inquirer = require('inquirer')
 const fs = require('fs');
 
+//Calling Classes
 const Engineer = require('./lib/Engineer');
 const Manager = require('./lib/Manager');
 const Intern = require('./lib/Intern');
+
+//Empty arrays and variable, pushes information when selected
 let theManager = "";
 let internArray = [];
 let engineerArray = [];
+
 //questions for each member
 const manageQuestions = () => {
     inquirer.prompt([
@@ -38,7 +43,7 @@ const manageQuestions = () => {
             addEmployee();
         })
 }
-
+//Ask intern questions if Intern is selected, then runs the add employee function
 function addIntern() {
     const intern = [
         {
@@ -49,7 +54,7 @@ function addIntern() {
         {
             name:'internID',
             type:'input',
-            message: 'enter'
+            message: 'Please enter Intern ID'
         },
         {
             name: 'internEmail',
@@ -72,6 +77,7 @@ function addIntern() {
     })
 }
 
+//Ask Engineer questions if Engineer is selected, then runs the add employee function
 function addEngineer() {
     const engineer = [
         {
@@ -82,7 +88,7 @@ function addEngineer() {
         {
             name:'EngineerID',
             type:'input',
-            message: 'enter'
+            message: 'Please enter Engineer ID'
         },
         {
             name: 'EngineerEmail',
@@ -105,6 +111,7 @@ function addEngineer() {
     })
 }
 
+//FUNCTION TO GENERATE CARDS WHICH DEPLOYS WHEN THE MANAGER SAYS THEY ARE DONE
 generateCards = () => {
     let htmlGenerate = `<!DOCTYPE html>
     <html lang="en">
@@ -163,16 +170,8 @@ fs.writeFileSync('./index.html', fileData, function(err,resp){
 })
 console.log("File",fileData)
 }
-/*const employ =
-inquirer.prompt()[{
-    name: 'addEmployee',
-    type: 'input',
-    message: 'Would you like to add an employee',
-}];
 
-*/
-//generateCards = () => {
-
+// ASKS THE QUESTION TO ADD ANOTHER EMPLOYEE OR CANCEL AND GENERATE HTML
 function addEmployee() {
     inquirer.prompt([
         {
@@ -191,10 +190,11 @@ function addEmployee() {
                     addIntern();
                     break;
                 default:
+                    console.log('Generating your employee cards now!');
                     generateCards();
             }
         })
 }
-//}
-//generateCards(); 
+
+//Call Function
 manageQuestions();
