@@ -18,9 +18,9 @@ N/A at this time
 ## Video Links:
 Watch in Order.
 Video 1:
-file:///Users/tylermair/Downloads/Untitled_%20Oct%2018,%202021%204_37%20PM.webm
+https://youtu.be/q02rkiFL0oI
 Video 2:
-https://drive.google.com/file/d/1WcX1sXEiuaUmxvfmurY7l4FkWwfQw-1u/view
+https://youtu.be/M_9dim1tqko
 Video 3:
-https://drive.google.com/file/d/12muJPAJw5UdM39MrHHFp_SQGVJaeKt56/view)
+https://youtu.be/AUxyTVEqugA
 
